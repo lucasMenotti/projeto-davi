@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalho</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <script>
+        function ajustarTamanhoTexto(acao) {
+            let texto = document.getElementById("texto-principal");
+            let tamanhoAtual = window.getComputedStyle(texto).fontSize;
+            let novoTamanho = parseInt(tamanhoAtual);
+            
+            if (acao === 'aumentar') {
+                novoTamanho += 2;
+            } else if (acao === 'diminuir') {
+                novoTamanho -= 2;
+            }
+            
+            texto.style.fontSize = novoTamanho + "px";
+        }
+    </script>
+</head>
+
+<body>
+    <header class="cabecalho">
+    </header>
+    <main class="apresentacao">
+        <section class="apresentacao__conteudo">
+            
+            <p id="texto-principal" class="apresentacao__conteudo__texto">
+                Mais do que um local de aprendizado, a escola é um ponto de encontro onde amizades são construídas, desafios são superados e sonhos começam a tomar forma. Com o apoio de professores e profissionais dedicados, os estudantes são incentivados a explorar novas ideias e a desenvolver um pensamento crítico, preparando-se para os desafios do futuro.</p>
+            
+            <div class="apresentacao__links">
+                <button onclick="ajustarTamanhoTexto('aumentar')">Aumentar Texto</button>
+                <button onclick="ajustarTamanhoTexto('diminuir')">Diminuir Texto</button>
+            </div>
+        </section>
+        
+        <img class="apresentacao_imagem" src="./imagens/escola.png" alt="Foto da Joana Santos programando">
+        
+        <h2 id="texto-escola">Descrição : Foto de uma escola amarela com telhado vermelho.</h2>
+    </main>
+</body>
+</html>
